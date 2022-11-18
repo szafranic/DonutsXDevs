@@ -8,5 +8,6 @@ export interface Donut {
     ref:               string;
     name:              string;
     photo:             string;
-    photo_attribution: string;
+    //photo_attribution: string;
+    photoAttribution: string;
 }

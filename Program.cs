@@ -1,3 +1,5 @@
+using DonutsXDevs.Models;
+
 namespace DonutsXDevs
 {
 	public class Program
@@ -9,7 +11,7 @@ namespace DonutsXDevs
 			// Add services to the container.
 
 			builder.Services.AddControllersWithViews();
-
+			builder.Services.AddDbContext<DxdContext>();
 			var app = builder.Build();
 
 			// Configure the HTTP request pipeline.

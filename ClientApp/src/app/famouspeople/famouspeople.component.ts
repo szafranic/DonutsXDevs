@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FameService } from '../fame.service';
 import { Famous, Complete } from '../famous';
 
+import { DxdService } from '../dxd.service';
 @Component({
   selector: 'app-famouspeople',
   templateUrl: './famouspeople.component.html',
@@ -9,11 +10,13 @@ import { Famous, Complete } from '../famous';
 })
 export class FamouspeopleComponent implements OnInit {
   peopleList:Complete[] ={} as Complete[];
-  constructor(private famousAPI:FameService) {
-    this.famousAPI.GetFamousPeople().subscribe(
-      (result:Famous) => (
+// private famousAPI:FameService
+
+  constructor(private fameDB:DxdService) {
+    this.fameDB.GetFamousPeople().subscribe(
+      (result:Complete[]) => (
         
-        this.peopleList = result.complete
+        this.peopleList = result
         
         )
     );
